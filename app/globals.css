@@ -1,0 +1,235 @@
+:root {
+  --brand: #13b38b; /* emerald/teal */
+  --brand-2: #0ea5e9; /* sky */
+  --ink: #0f172a; /* slate-900 */
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji;
+  color: var(--ink);
+  background: #f7fafc;
+}
+
+* { box-sizing: border-box; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(2,6,23,0.08);
+  background: white;
+  color: var(--ink);
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow .2s ease, transform .04s ease;
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+  border: none;
+}
+
+.button:active { transform: translateY(1px); }
+
+.panel {
+  margin-top: 16px;
+  background: white;
+  border: 1px solid rgba(2,6,23,0.06);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.flyer-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Flyer canvas */
+.flyer {
+  width: 1080px;
+  aspect-ratio: 4 / 5; /* 1080x1350 */
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: radial-gradient(1200px 600px at -10% -10%, rgba(20,184,166,0.25), transparent 50%),
+              radial-gradient(900px 500px at 110% 10%, rgba(14,165,233,0.25), transparent 50%),
+              linear-gradient(180deg, #ffffff, #f8fafc 60%);
+  border: 1px solid rgba(2,6,23,0.08);
+  box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+}
+
+.flyer-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 36px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(20,184,166,0.1);
+  color: #065f46;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid rgba(2,6,23,0.06);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+
+.hero {
+  margin-top: 24px;
+}
+
+.kicker {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: rgba(14,165,233,0.12);
+  color: #0c4a6e;
+}
+
+.title {
+  margin: 14px 0 8px;
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  font-weight: 900;
+  color: #0b1324;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid rgba(2,6,23,0.06);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(20,184,166,0.12);
+  color: #065f46;
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(16,185,129,0.25);
+}
+
+.contact {
+  font-weight: 700;
+  color: #0b1324;
+}
+
+/* Responsive preview area */
+.preview-wrap {
+  overflow: auto;
+}
+
+.preview-inner {
+  width: 100%;
+  overflow: auto;
+}
+
+@media (max-width: 1280px) {
+  .flyer { width: 820px; }
+}
+
+@media (max-width: 900px) {
+  .flyer { width: 680px; }
+}
+
+@media (max-width: 740px) {
+  .flyer { width: 100%; }
+}
